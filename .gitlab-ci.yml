@@ -57,6 +57,7 @@ variables:
 
   # Feature Flag Vars
   FF_PREVIEW_PULL_CONFIG_CACHE: "true" # set to false to disable caching of pull_config.yaml in preview builds
+  FF_BUILD_IMAGE_URL: "registry.ddbuild.io/ci/websites/webops-site-build:v42145832-00d7fc2f"
 
 
 # ================== copy scripts =============== #
@@ -152,7 +153,7 @@ before_script:
       when: on_success
 # ================== templates ================== #
 .base_template: &base_template
-  image: registry.ddbuild.io/ci/websites/webops-site-build:v42145832-00d7fc2f
+  image: $FF_BUILD_IMAGE_URL
   tags:
     - "arch:amd64"
   rules:
