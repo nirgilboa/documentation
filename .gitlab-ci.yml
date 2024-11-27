@@ -164,7 +164,7 @@ before_script:
       when: on_success
 # ================== templates ================== #
 .base_template: &base_template
-  image: registry.ddbuild.io/ci/websites/webops-site-build-preview:v50075589-a8b1a35a@sha256:cb7dc
+  image: registry.ddbuild.io/ci/websites/webops-site-build-preview:v50075589-a8b1a35a
   tags:
     - "arch:amd64"
   rules:
