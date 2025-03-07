@@ -120,6 +120,7 @@ const initCodeTabs = () => {
                 allTabLinksNodeList.forEach(link => {
                     link.addEventListener('click', e => {
                         e.preventDefault();
+                        const previousTabPosition = e.target.getBoundingClientRect().top
                         const region = getCookieByName('site');
                         const regionalCodeTabs = codeTabParameters[region];
                         const targetTop = e.target.getBoundingClientRect().top + window.scrollY;
@@ -131,9 +132,12 @@ const initCodeTabs = () => {
                                 offsetY += codeTab.elementHeightDifference;
                             }
                         }
+                        // ensures that page does not jump when navigating between tabs.
+                        // takes into account page shifting that occurs due to navigating tabbed content w/ height changes.
+                        // sourced from implementation of synced tabs here: https://github.com/withastro/starlight/blob/main/packages/starlight/user-components/Tabs.astro
                         window.scrollTo({
-                            top: window.scrollY + offsetY,
-                            behavior: "instant"
+                            top: (window.scrollY + e.target.getBoundingClientRect().top) - previousTabPosition,
+                            behavior: 'instant',
                         });
                         getContentTabHeight();
                         offsetY = 0;
