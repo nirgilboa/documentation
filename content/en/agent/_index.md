@@ -1,5 +1,5 @@
 ---
-title: Agent
+title: Agent docs demo edit
 description: Install and configure the Agent to collect data
 further_reading:
 - link: "/logs/"
