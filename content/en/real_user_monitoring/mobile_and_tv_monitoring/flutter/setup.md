@@ -30,9 +30,6 @@ To start sending RUM or Error Tracking data from your Flutter application to Dat
 
 ### Step 1 - Specify application details in the UI
 
-{{< tabs >}}
-{{% tab "RUM" %}}
-
 1. In Datadog, navigate to [**Digital Experience** > **Add an Application**][1].
 2. Choose `Flutter` as the application type.
 3. Provide an application name to generate a unique Datadog application ID and client token.
@@ -43,21 +40,6 @@ To start sending RUM or Error Tracking data from your Flutter application to Dat
 [1]: https://app.datadoghq.com/rum/application/create
 [2]: /real_user_monitoring/ios/data_collected/
 
-{{% /tab %}}
-{{% tab "Error Tracking" %}}
-
-1. Navigate to [**Error Tracking** > **Settings** > **Browser and Mobile** > **Add an Application**][1].
-2. Choose `Flutter` as the application type.
-3. Provide an application name to generate a unique Datadog application ID and client token.
-4. To disable automatic user data collection for either client IP or geolocation data, uncheck the boxes for those settings. For more information, see [Flutter Data Collected][2].
-
-   {{< img src="real_user_monitoring/error_tracking/mobile-new-application-1.png" alt="Create an application for Flutter in Datadog" style="width:90%;">}}
-
-[1]: https://app.datadoghq.com/error-tracking/settings/setup/client
-[2]: /real_user_monitoring/ios/data_collected/
-
-{{% /tab %}}
-{{< /tabs >}}
 
 To ensure the safety of your data, you must use a client token. For more information about setting up a client token, see the [Client Token documentation][3].
 
